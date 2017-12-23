@@ -12,7 +12,7 @@ const INITIAL_STATE={
     user: null,
     error: '',
     loading: false
-};
+};  
 
 export default (state=INITIAL_STATE, actions)=> {
     console.log(actions);
