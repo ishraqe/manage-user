@@ -1,2 +1,2 @@
 export * from './AuthActions';
-export * from './EmployeeUpdate';
+export * from './EmployeeActions';

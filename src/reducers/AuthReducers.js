@@ -24,11 +24,12 @@ export default (state=INITIAL_STATE, actions)=> {
         case LOGIN_USER:
             return {...state, loading: true, error: ''};       
         case LOGIN_USER_SUCCESS: 
-            return {...state,user: actions.payload,... INITIAL_STATE };
+            return {...state,user: actions.payload, ... INITIAL_STATE };
         case LOGIN_USER_FAIL:
+            console.log(actions);
             return {
                 ...state,
-                error: 'Authentication failed !!',
+                error: 'Intruder Alert !!',
                 password: '',
                 loading: false
             };  

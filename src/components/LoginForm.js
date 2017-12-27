@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {View, Text} from 'react-native';
+import {View,Text,TextInput,StyleSheet,TouchableOpacity,KeyboardAvoidingView} from 'react-native';
 import {emailChanged, passwordChanged, loginUser} from "../actions";
 import {Card, CardSection, Input, Button, Spinner} from './common';
 
@@ -19,7 +19,7 @@ class LoginForm extends Component {
     renderErrorMessage() {
         if(this.props.error) {
             return (
-                <View style={{backgroundColor: 'white'}}>
+                <View style={{ marginBottom: 10}}>
                     <Text style={styles.errorMsgStyle}>{this.props.error}</Text>
                 </View>
             );
@@ -32,36 +32,44 @@ class LoginForm extends Component {
         }
 
         return (
-            <Button onPress={this.onButtonPress.bind(this)} >
-                Log In
-            </Button>
+            <TouchableOpacity style={styles.btn}>
+                <Text style={styles.btnText}
+                    onPress={this.onButtonPress.bind(this)} 
+                >
+                    Iron man sucks !!
+                 </Text>
+            </TouchableOpacity>
         );
     }
-    render() {
+    render() {                                                   
         return(
-          <Card>
-            <CardSection>
-                <Input
+            <KeyboardAvoidingView>
+                <View style={styles.formContainer}>
+                <TextInput 
+                    style={styles.input}
                     placeholder={'email@email.com'}
-                    label={'Email'}
+                    returnKeyType={'next'}
+                    keyboardType='email-address'
+                    autoCorrect={false}
+                    placeholderTextColor='rgb(255,255,255)'
+                    underlineColorAndroid='transparent'
                     onChangeText={this.onEmailChange.bind(this)}
                     value={this.props.email}
                 />
-            </CardSection>
-            <CardSection>
-                <Input
+
+                <TextInput style={styles.input} 
+                    placeholderTextColor='rgba(255,255,255,.8)'
+                    underlineColorAndroid='transparent'
+                    returnKeyType={'go'}
                     secureTextEntry
                     placeholder={'password'}
-                    label={'Password'}
                     onChangeText={this.onPasswordChange.bind(this)}
                     value={this.props.password}
                 />
-            </CardSection>
-                {this.renderErrorMessage()}
-            <CardSection>
-                {this.renderButton()}
-            </CardSection>
-          </Card>
+                    {this.renderErrorMessage()}
+                    {this.renderButton()}
+                </View>
+            </KeyboardAvoidingView>
         );
     }
 };
@@ -71,7 +79,29 @@ const styles = {
         fontSize: 20, 
         alignSelf: 'center',
         color: 'red'
-    }
+    },
+    formContainer: {
+        padding: 10,
+        marginBottom: 10
+    },
+    input: {
+        backgroundColor: 'rgba(255,255,255, .6)',
+        height: 60,
+        opacity: .7,
+        marginBottom: 15,
+        paddingHorizontal: 20,
+        color: '#fff',
+        fontSize: 20
+    },
+    btn: {
+        backgroundColor: 'rgba(255,255,255, .6)',
+        paddingVertical: 20
+    },
+    btnText: {
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 18
+}
 }
 
 const mapStateToProps = ({auth}) => {
