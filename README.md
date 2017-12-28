@@ -8,7 +8,7 @@
 <h2>Installation:</h2>
 <p><b>Clone or Download</b></p>
 <p>Install dependencies by </p>
-<pre><code>cd auth</code></pre>
+
 <pre><code>npm install</code></pre>
 
 Then
