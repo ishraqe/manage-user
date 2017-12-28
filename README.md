@@ -1,6 +1,6 @@
 # Manage Robin's
 
-![alt text](https://raw.githubusercontent.com/ishraqe/manage-user/master/path/to/img.png)
+![](https://raw.githubusercontent.com/ishraqe/manage-user/master/src/assets/images/readme.png)
 
 
 <p>A simple CRUD app built with <strong>React-native</strong> and <strong>Firebase</strong>.</p>
