@@ -12,7 +12,7 @@ class App extends  Component {
 
     componentWillMount(){
         const config = {
-            apiKey: "AIzaSyBxnIgc4beKEcsFJkCrDHNwUjZstLHFJpk",
+            apiKey: "api_key",
             authDomain: "manager-react-ce2e6.firebaseapp.com",
             databaseURL: "https://manager-react-ce2e6.firebaseio.com",
             projectId: "manager-react-ce2e6",
